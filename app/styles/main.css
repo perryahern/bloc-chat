@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+.room-panel {
+    width: 200px;
+    min-height: 100%;
+    padding-left: 25px;
+    padding-top: 1px;
+    background: lightgray;
+}
