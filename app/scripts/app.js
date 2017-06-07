@@ -12,6 +12,13 @@
                 controller: 'HomeCtrl as home',
                 templateUrl: '/templates/home.html'
             });
+
+//        $stateProvider
+//            .state('addRoom', {
+//                url: '/',
+//                controller: 'AddRoomCtrl as addRoom',
+//                templateUrl: '/templates/addRoom.html'
+//            });
     }
 
     angular

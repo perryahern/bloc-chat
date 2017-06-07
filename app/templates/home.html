@@ -1,6 +1,10 @@
 <section class="room-panel">
     <h1>Bloc Chat</h1>
 
+    <div ng-controller="AddRoomCtrl as addRoom">
+        <button ng-click="addRoom.addNewRoom()">New room</button>
+    </div>
+
     <section ng-controller="HomeCtrl as home">
         <p ng-repeat="room in home.rooms">{{ room.$value }}</p>
     </section>
