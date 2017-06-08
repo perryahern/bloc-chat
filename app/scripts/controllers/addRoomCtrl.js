@@ -1,19 +1,18 @@
 (function() {
-    function AddRoomCtrl(Room) {
+    function AddRoomCtrl(Room, $uibModal) {
         this.addNewRoom = function() {
 //            var roomName = window.prompt("Enter a room name:");
 //            this.rooms = Room.add(roomName);
 
-            var test = $uibModal.open({
-                templateURL: '/templates/addRoom.html',
-                controller: 'AddRoomCtrl'
+            var result = $uibModal.open({
+                templateUrl: '/templates/addRoom.html',
+                controller: 'ModalInstanceCtrl',
+                controllerAs: '$modal'
             });
-
-            console.log("Opened");
         };
     }
 
     angular
-        .module('blocChat', ['ui.bootstrap'])
+        .module('blocChat')
         .controller('AddRoomCtrl', ['Room', '$uibModal', AddRoomCtrl]);
 })();

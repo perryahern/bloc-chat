@@ -1,2 +1,16 @@
-You are here!
-<script>console.log("addRoom template reached");</script>
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">New Chat Room</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+    <form ng-submit="addNewRoom()" ng-controller="AddRoomCtrl">
+        Enter name of new chat room:
+        <input type="text" ng-model="text" name="text" />
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$modal.submit()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="$modal.cancel()">Cancel</button>
+</div>
