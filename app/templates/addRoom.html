@@ -3,10 +3,9 @@
 </div>
 <div class="modal-body" id="modal-body">
 
-    <form ng-submit="addNewRoom()" ng-controller="AddRoomCtrl">
+    <form ng-submit="$modal.submit()">
         Enter name of new chat room:
-        <input type="text" ng-model="text" name="text" />
-        <input type="submit" id="submit" value="Submit" />
+        <input type="text" ng-model="$modal.newRoom" name="text" />
     </form>
 
 </div>

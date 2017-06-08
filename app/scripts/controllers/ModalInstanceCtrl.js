@@ -1,6 +1,7 @@
 (function() {
-    function ModalInstanceCtrl($uibModalInstance) {
+    function ModalInstanceCtrl($uibModalInstance, Room) {
         this.submit = function () {
+            Room.add(this.newRoom);
             var exit = $uibModalInstance.close('cancel');
         };
 
@@ -11,5 +12,5 @@
 
     angular
         .module('blocChat')
-        .controller('ModalInstanceCtrl', ['$uibModalInstance', ModalInstanceCtrl]);
+        .controller('ModalInstanceCtrl', ['$uibModalInstance', 'Room', ModalInstanceCtrl]);
 })();
