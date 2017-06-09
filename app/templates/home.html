@@ -4,8 +4,12 @@
     <div ng-controller="AddRoomCtrl as addRoom">
         <button ng-click="addRoom.addNewRoom()">New room</button>
     </div>
-
+    <br>
     <section ng-controller="HomeCtrl as home">
         <p ng-repeat="room in home.rooms">{{ room.$value }}</p>
     </section>
+</section>
+<section class="chat-panel" ng-controller="MessageCtrl as messageList">
+    <p>Test!</p>
+    <p ng-repeat="message in messageList.messages">{{ message.content.$value }}</p>
 </section>

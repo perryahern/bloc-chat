@@ -12,6 +12,12 @@
                 controller: 'HomeCtrl as home',
                 templateUrl: '/templates/home.html'
             });
+
+        $stateProvider
+            .state('message', {
+                url: '/',
+                controller: 'MessageCtrl as message'
+            });
     }
 
     angular
