@@ -1,6 +1,6 @@
 (function() {
     function MessageCtrl(Message) {
-        this.messages = Message;
+        this.messages = Message.all;
     }
 
     angular
