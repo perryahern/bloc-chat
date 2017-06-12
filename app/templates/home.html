@@ -5,12 +5,12 @@
         <button ng-click="addRoom.addNewRoom()">New room</button>
     </div>
     <br>
-    <section ng-controller="HomeCtrl as home">
-        <p ng-repeat="room in home.rooms"><a ng-href="/" ng-click="home.currentRoom = room.$name">{{ room.$value }}</a></p>
+    <section>
+        <p ng-repeat="room in home.rooms"><a ng-click="home.changeRoom(room.$id)">{{ room.$value + " " + room.$id + ": " + home.currentRoom}}</a></p>
     </section>
 </section>
 <section class="chat-panel" ng-controller="MessageCtrl as messageList">
-    <p ng-repeat="message in messageList.messages">
+    <p ng-repeat="message in home.messages">
         {{ message.sentAt }}<br>
         {{ message.username + ": " + message.content }}
         {{ home.currentRoom }}
