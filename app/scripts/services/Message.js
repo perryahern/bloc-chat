@@ -8,8 +8,7 @@
         return $firebaseArray(ref.orderByChild('roomId').equalTo(newRoomId));
     };
 
-
-    Message.all = $firebaseArray(ref);
+    // Message.all = $firebaseArray(ref);
     return Message;
   }
 
