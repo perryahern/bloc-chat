@@ -9,11 +9,29 @@ html, body {
     min-height: 100%;
     padding-left: 25px;
     padding-top: 1px;
-    background: lightgray;
+    background: #383655;
+}
+
+.room-panel h1 {
+    color: #E4DEF6;
+}
+
+.room-panel a {
+    cursor: pointer;
+    color: #C2BCD4;
 }
 
 .chat-panel {
     position: absolute;
-    left: 20%;
-    top: 2%
+    left: 19%;
+    top: 0;
+    min-height: 100%;
+    min-width: 81%;
+    padding-left: 10px;
+    background: #C2BCD4;
+    color: #261362;
+}
+
+.chat-panel h3 {
+    padding-top: 11px;
 }

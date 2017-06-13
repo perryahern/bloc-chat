@@ -6,10 +6,13 @@
     </div>
     <br>
     <section>
-        <p ng-repeat="room in home.rooms"><a ng-click="home.changeRoom(room.$id)">{{ room.$value }}</a></p>
+        <p ng-repeat="room in home.rooms"><a ng-click="home.changeRoom(room.$id, room.$value)">{{ room.$value }}</a></p>
     </section>
 </section>
-<section class="chat-panel" ng-controller="MessageCtrl as messageList">
+<section class="chat-panel">
+    <div class="chat-panel-header">
+        <h3>{{ home.currentRoomName }}</h3>
+    </div>
     <p ng-repeat="message in home.messages">
         {{ message.sentAt }}<br>
         {{ message.username + ": " + message.content }}

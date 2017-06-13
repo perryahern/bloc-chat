@@ -1,12 +1,13 @@
 (function() {
     function HomeCtrl(Room, Message, $scope) {
         this.rooms = Room.all;
-        $scope.currentRoom = 'test';
-        this.currentRoom = null;
+        this.currentRoomKey = null;
+        this.currentRoomName = 'Select a room from the list on the left';
 
-        this.changeRoom = function(roomKey) {
-            this.currentRoom = roomKey;
-            this.messages = Message.getByRoomId(this.currentRoom);
+        this.changeRoom = function(roomKey, roomName) {
+            this.currentRoomKey = roomKey;
+            this.currentRoomName = roomName;
+            this.messages = Message.getByRoomId(this.currentRoomKey);
         };
     }
 
