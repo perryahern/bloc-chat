@@ -18,3 +18,25 @@
         {{ message.username + ": " + message.content }}
     </p>
 </section>
+<section class="new-message-area">
+    <!-- <form ng-submit="Message.send(newChatMessage)">
+        <label>Message: </label>
+        <input type="text" ng-model="newChatMessage" name="text" />
+        <input type="submit" value="Send" ng-click="Message.send(newChatMessage)">
+    </form> -->
+
+    <label>Message: </label>
+    <input id="newChatMessage">
+    <button type="button" onclick="home.submitMessage(newChatMessage)">Send</button>
+
+    <!-- <form ng-submit="home.submitMessage()">
+        <label>Message: </label>
+        <input type="text" name="newChatMessage" />
+        <input type="submit" value="Send" ng-click="home.submitMessage(newChatMessage)">
+    </form> -->
+
+    <!-- <p>
+        <label>Message:</label>
+        <input type="text"  [ngModel]="newChatMessage" required>
+    </p> -->
+</section>
