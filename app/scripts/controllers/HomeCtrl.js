@@ -1,8 +1,14 @@
 (function() {
-    function HomeCtrl(Room, Message, $scope) {
+    function HomeCtrl(Room, Message, $cookies) {
         this.rooms = Room.all;
         this.currentRoomKey = null;
-        this.currentRoomName = 'Select a room from the list on the left';
+        var currentUser = $cookies.get('blocChatCurrentUser');
+        var greeting = '';
+
+        if (currentUser) {
+            greeting = 'Welcome back ' + currentUser + '. ';
+        }
+        this.currentRoomName = greeting + 'Pick a room, any room, or add one!';
 
         this.changeRoom = function(roomKey, roomName) {
             this.currentRoomKey = roomKey;
@@ -13,5 +19,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$scope', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$cookies', HomeCtrl]);
 })();
