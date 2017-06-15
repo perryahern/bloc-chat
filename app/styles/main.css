@@ -4,6 +4,16 @@ html, body {
     font-family: 'Open Sans';
 }
 
+.user-info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 1% 0 1%;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-color: #383655;
+}
+
 .room-panel {
     width: 19%;
     min-height: 100%;
@@ -55,18 +65,24 @@ html, body {
 }
 
 .chat-panel .user {
+    vertical-align: top;
     padding-left: .75%;
     display: inline-block;
+    font-weight: 600;
 }
 
 .chat-panel .time {
     position: absolute;
     right: 2%;
+    vertical-align: top;
     display: inline-block;
+    font-weight: lighter;
 }
 
 .chat-panel .content {
     display: inline-block;
+    max-width: 1000px;
+    font-weight: normal;
 }
 
 .chat-panel .odd {
@@ -92,7 +108,7 @@ html, body {
     padding-top: 1.5%;
     font-size: 1.5em;
     background: #E4DEF6;
-    color: #261362;
+    color: #383655;
 }
 
 .new-message-area .message-box {

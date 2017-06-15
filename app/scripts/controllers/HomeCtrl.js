@@ -18,27 +18,33 @@
         };
 
         this.submitMessage = function() {
-            if (this.newMessage !== '') {
-                var newMessagePrep = {};
-                newMessagePrep.username = this.currentUser;
-                newMessagePrep.content = this.newMessage;
-                var now = new Date();
-                var hours = now.getHours();
-                var amPm = 'a.m.';
-                if (hours > 12) {
-                    hours -= 12;
-                    amPm = 'p.m.';
-                } else if (hours === 0) {
-                    hours = 12;
+            // Make sure a room has been selected
+            if (this.currentRoomKey) {
+                // Make sure the message isn't empty due to use of '' to clear message input  field
+                if (this.newMessage !== '') {
+                    var newMessagePrep = {};
+                    newMessagePrep.username = this.currentUser;
+                    newMessagePrep.content = this.newMessage;
+                    var now = new Date();
+                    var hours = now.getHours();
+                    var amPm = 'a.m.';
+                    if (hours > 12) {
+                        hours -= 12;
+                        amPm = 'p.m.';
+                    } else if (hours === 0) {
+                        hours = 12;
+                    }
+                    var minutes = now.getMinutes();
+                    if (minutes < 10) {
+                        minutes = '0' + minutes;
+                    }
+                    newMessagePrep.sentAt = hours + ':' + minutes + ' ' + amPm + ' on ' + (now.getMonth() + 1) + '/' + now.getDate() + '/' + (now.getFullYear() - 2000);
+                    newMessagePrep.roomId = this.currentRoomKey;
+                    this.newMessage = '';
+                    Message.send(newMessagePrep);
                 }
-                var minutes = now.getMinutes();
-                if (minutes < 10) {
-                    minutes = '0' + minutes;
-                }
-                newMessagePrep.sentAt = hours + ':' + minutes + ' ' + amPm + ' on ' + (now.getMonth() + 1) + '/' + now.getDate() + '/' + (now.getFullYear() - 2000);
-                newMessagePrep.roomId = this.currentRoomKey;
-                this.newMessage = '';
-                Message.send(newMessagePrep);
+            } else {
+                alert("Please select a room from the list on the left, then try again.");
             }
         };
     }

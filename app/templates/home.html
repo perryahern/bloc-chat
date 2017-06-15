@@ -1,3 +1,4 @@
+<!-- Create the left navigation panel, which contains the app name, add new room button, and selectable room list -->
 <section class="room-panel">
     <h1>Bloc Chat</h1>
 
@@ -8,7 +9,12 @@
         <p ng-repeat="room in home.rooms"><a ng-click="home.changeRoom(room.$id, room.$value)">{{ room.$value }}</a></p>
     </section>
 </section>
+
+<!-- Create the chat panel, which contains the room name, user name remainder, and chat messages -->
 <section class="chat-panel">
+    <section class="user-info">
+        <p>User: {{ home.currentUser }}</p>
+    </section>
     <div class="chat-panel-header">
         <h3>{{ home.currentRoomName }}</h3>
     </div>
@@ -18,9 +24,11 @@
         <div class="time">{{ message.sentAt }}</div>
     </div>
 </section>
+
+<!-- Create the message entry panel, which contains the input field and submit button -->
 <section class="new-message-area">
     <form id="chatForm" ng-submit="home.submitMessage()">
         <label>Message: <input id="chatInput" type="text" class="message-box" ng-model="home.newMessage" placeholder="Express your author-ity!"></label>
-        <div class="message-button" type="button" ng-click="home.submitMessage()">Send it!</div>
+        <div class="message-button" type="button" ng-click="home.submitMessage()">Send it</div>
     </form>
 </section>
