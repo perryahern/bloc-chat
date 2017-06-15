@@ -9,8 +9,7 @@
         };
 
         Message.send = function(newMessage) {
-            var currentUser = $cookies.get('blocChatCurrentUser');
-            console.log(currentUser + 'is in the newMessage function');
+            messages.$add(newMessage);
         };
 
         return Message;

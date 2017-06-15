@@ -2,9 +2,8 @@
     <h1>Bloc Chat</h1>
 
     <div ng-controller="AddRoomCtrl as addRoom">
-        <button ng-click="addRoom.addNewRoom()">Add room</button>
+        <div class="add-button" type="button" ng-click="addRoom.addNewRoom()">Add a room</div>
     </div>
-    <br>
     <section>
         <p ng-repeat="room in home.rooms"><a ng-click="home.changeRoom(room.$id, room.$value)">{{ room.$value }}</a></p>
     </section>
@@ -13,30 +12,15 @@
     <div class="chat-panel-header">
         <h3>{{ home.currentRoomName }}</h3>
     </div>
-    <p ng-repeat="message in home.messages">
-        {{ message.sentAt }}<br>
-        {{ message.username + ": " + message.content }}
-    </p>
+    <div ng-repeat="message in home.messages" ng-class-odd="'odd'" ng-class-even="'even'">
+        <div class="user">{{ message.username }}: </div>
+        <div class="content">{{ message.content }}</div>
+        <div class="time">{{ message.sentAt }}</div>
+    </div>
 </section>
 <section class="new-message-area">
-    <!-- <form ng-submit="Message.send(newChatMessage)">
-        <label>Message: </label>
-        <input type="text" ng-model="newChatMessage" name="text" />
-        <input type="submit" value="Send" ng-click="Message.send(newChatMessage)">
-    </form> -->
-
-    <label>Message: </label>
-    <input id="newChatMessage">
-    <button type="button" onclick="home.submitMessage(newChatMessage)">Send</button>
-
-    <!-- <form ng-submit="home.submitMessage()">
-        <label>Message: </label>
-        <input type="text" name="newChatMessage" />
-        <input type="submit" value="Send" ng-click="home.submitMessage(newChatMessage)">
-    </form> -->
-
-    <!-- <p>
-        <label>Message:</label>
-        <input type="text"  [ngModel]="newChatMessage" required>
-    </p> -->
+    <form id="chatForm" ng-submit="home.submitMessage()">
+        <label>Message: <input id="chatInput" type="text" class="message-box" ng-model="home.newMessage" placeholder="Express your author-ity!"></label>
+        <div class="message-button" type="button" ng-click="home.submitMessage()">Send it!</div>
+    </form>
 </section>

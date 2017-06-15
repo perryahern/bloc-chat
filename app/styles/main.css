@@ -16,9 +16,26 @@ html, body {
     color: #E4DEF6;
 }
 
+.room-panel .add-button {
+    margin: 20px 0 20px 20px;
+    color: #383655;
+    text-align: center;
+    padding: 10px 0;
+    background:#C2BCD4;
+    width: 44%;
+    /*height: 40px;*/
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
 .room-panel a {
     cursor: pointer;
     color: #C2BCD4;
+}
+
+.room-panel a:hover {
+    color: #E4DEF6;
+    text-decoration: none;
 }
 
 .chat-panel {
@@ -27,7 +44,8 @@ html, body {
     top: 0;
     min-height: 100%;
     min-width: 81%;
-    padding-left: .75%;
+    padding-left: 1%;
+    padding-right: 1%;
     background: #C2BCD4;
     color: #261362;
 }
@@ -36,7 +54,33 @@ html, body {
     padding-top: 1.1%;
 }
 
+.chat-panel .user {
+    padding-left: .75%;
+    display: inline-block;
+}
+
+.chat-panel .time {
+    position: absolute;
+    right: 2%;
+    display: inline-block;
+}
+
+.chat-panel .content {
+    display: inline-block;
+}
+
+.chat-panel .odd {
+  background-color: #E4DEF6;
+  padding: 2px;
+}
+
+.chat-panel .even {
+  background-color: #C2BCD4;
+  padding: 2px;
+}
+
 .new-message-area {
+    box-sizing: border-box;
     position: absolute;
     left: 19%;
     bottom: 0;
@@ -46,6 +90,34 @@ html, body {
     border-color: #383655;
     padding-left: .75%;
     padding-top: 1.5%;
+    font-size: 1.5em;
     background: #E4DEF6;
     color: #261362;
+}
+
+.new-message-area .message-box {
+    width: 975px;
+    padding-left: .75%;
+    background-color: transparent;
+    border: transparent;
+}
+
+.new-message-area .message-button {
+    position: absolute;
+    right: .5%;
+    top: 10%;
+    bottom: 10%;
+    min-width: 10%;
+    border-bottom: 15px solid;
+    border-color: #E4DEF6;
+    padding: 15px 0;
+    text-align: center;
+    background: #383655;
+    color: #E4DEF6;
+    cursor: pointer;
+}
+
+input:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
 }
