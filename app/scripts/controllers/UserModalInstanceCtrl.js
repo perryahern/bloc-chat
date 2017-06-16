@@ -1,15 +1,19 @@
 (function() {
-    function UserModalInstanceCtrl($uibModalInstance, $cookies) {
+    function UserModalInstanceCtrl($uibModalInstance, $cookies, $state) {
         this.submit = function () {
             if (this.newUser) {
                 $cookies.put('blocChatCurrentUser', this.newUser);
-                window.location.reload(true);
+                $state.reload();
                 var exit = $uibModalInstance.close('cancel');
             }
+        };
+
+        this.cancel = function () {
+            $uibModalInstance.dismiss();
         };
     }
 
     angular
         .module('blocChat')
-        .controller('UserModalInstanceCtrl', ['$uibModalInstance', '$cookies', UserModalInstanceCtrl]);
+        .controller('UserModalInstanceCtrl', ['$uibModalInstance', '$cookies', '$state', UserModalInstanceCtrl]);
 })();

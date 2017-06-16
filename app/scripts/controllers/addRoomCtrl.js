@@ -1,7 +1,7 @@
 (function() {
     function AddRoomCtrl(Room, $uibModal) {
         this.addNewRoom = function() {
-            var result = $uibModal.open({
+            $uibModal.open({
                 templateUrl: '/templates/addRoom.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: '$modal'

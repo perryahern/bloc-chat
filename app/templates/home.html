@@ -12,7 +12,7 @@
 
 <!-- Create the chat panel, which contains the room name, user name remainder, and chat messages -->
 <section class="chat-panel">
-    <section class="user-info">
+    <section class="user-info" ng-click="home.changeUser()">
         <p>User: {{ home.currentUser }}</p>
     </section>
     <div class="chat-panel-header">
@@ -28,7 +28,7 @@
 <!-- Create the message entry panel, which contains the input field and submit button -->
 <section class="new-message-area">
     <form id="chatForm" ng-submit="home.submitMessage()">
-        <label>Message: <input id="chatInput" type="text" class="message-box" ng-model="home.newMessage" placeholder="Express your author-ity!"></label>
+        <label>Message: <input id="chatInput" type="text" class="message-box" ng-model="home.newMessage" placeholder="Express your author-ity!" autofocus></label>
         <div class="message-button" type="button" ng-click="home.submitMessage()">Send it</div>
     </form>
 </section>

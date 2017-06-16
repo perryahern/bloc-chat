@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl(Room, Message, $cookies) {
+    function HomeCtrl(Room, Message, $cookies, $uibModal) {
         this.rooms = Room.all;
         this.currentRoomKey = null;
         var greeting = '';
@@ -15,6 +15,14 @@
             this.currentRoomKey = roomKey;
             this.currentRoomName = roomName;
             this.messages = Message.getByRoomId(this.currentRoomKey);
+        };
+
+        this.changeUser = function() {
+            $uibModal.open({
+                templateUrl: '/templates/changeUser.html',
+                controller: 'UserModalInstanceCtrl',
+                controllerAs: '$modal',
+            });
         };
 
         this.submitMessage = function() {
@@ -51,5 +59,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$cookies', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$cookies', '$uibModal', HomeCtrl]);
 })();
